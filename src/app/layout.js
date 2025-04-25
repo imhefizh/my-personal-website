@@ -1,4 +1,3 @@
-import Image from "next/image";
 import "./globals.css";
 import { Poppins } from 'next/font/google'
 
@@ -8,8 +7,8 @@ const poppins = Poppins({
 })
 
 export const metadata = {
-  title: "Lab",
-  description: "Let's doing things",
+  title: "Maulana Hafidz",
+  description: "It is my personal website. Here I put my works so you can be satisfied.",
 };
 
 export default function RootLayout({ children }) {
