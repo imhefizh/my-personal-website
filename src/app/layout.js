@@ -1,4 +1,5 @@
 import "./globals.css";
+import ClientLayout from "./provider";
 import { Poppins } from 'next/font/google'
 
 const poppins = Poppins({
@@ -7,7 +8,7 @@ const poppins = Poppins({
 })
 
 export const metadata = {
-  title: "Maulana Hafidz",
+  title: "Maulana Hafidz Ismail",
   description: "It is my personal website. Here I put my works so you can be satisfied.",
 };
 
@@ -15,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={poppins.className}>
       <body className="overflow-x-hidden">
-        {children}
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
