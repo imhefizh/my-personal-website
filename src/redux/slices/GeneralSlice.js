@@ -3,15 +3,15 @@ import { createSlice } from "@reduxjs/toolkit";
 export const GeneralSlice = createSlice({
     name: "general",
     initialState: {
-        init: "",
+        page: 0,
     },
     reducers: {
-        updateInit: (state, action) => {
-            state.init = "It works!"
+        updatePage: (state, action) => {
+            state.page = action.payload
         }
     }
 })
 
-export const { updateInit } = GeneralSlice.actions;
+export const { updatePage } = GeneralSlice.actions;
 
 export default GeneralSlice.reducer;

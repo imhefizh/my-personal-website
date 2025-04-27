@@ -9,4 +9,7 @@
   --color-darkblue: #283b48;
   --color-blue: #00a6c0;
   --color-silver: #d8d7ce;
+  --breakpoint-tablet: 768px;
+  --breakpoint-laptop: 1024px;
+  --breakpoint-laptopL: 1440px;
 }

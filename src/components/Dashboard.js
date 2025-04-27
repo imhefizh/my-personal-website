@@ -1,13 +1,50 @@
+'use client'
+
+import { useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { updatePage } from "@/redux/slices/GeneralSlice"
+
 export default function Dashboard() {
+    let isItPhone = null;
+    const [role, setRole] = useState("Graphic Designer")
+    const page = useSelector(state => state.general.page)
+    const dispatch = useDispatch();
+    // 0 = About, 1 = Articles, 2 = Badges & Certs, 3 = Works
+    const [nav, setNav] = useState("0")
+
+    useEffect(() => {
+        if (window.innerWidth < 768) {
+            // eslint-disable-next-line react-hooks/exhaustive-deps
+            isItPhone = true;
+        } else {
+            isItPhone = false
+        }
+    })
+
+    // Fungsi untuk auto scrolling
+    function pleaseScrollTo(element, offset) {
+        setTimeout(() => {
+            const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+            const offsetPos = elementPosition - offset;
+
+            if (isItPhone == true) {
+                window.scrollTo({
+                    top: offsetPos,
+                    behavior: "smooth"
+                })
+            }
+        }, 1000)
+    }
+
     return (
         <>
-            <div className="px-20 h-screen text-white w-[40%] fixed flex flex-col items-center justify-center">
+            <div className="laptopL:px-20 px-10 tablet:h-screen h-dvh text-white laptopL:w-[40%] laptop:w-[40%] laptop:fixed flex flex-col items-center justify-center">
                 <div className="flex flex-col w-full">
-                    <p>My name is</p>
-                    <h1 className="text-4xl font-semibold">Maulana Hafidz Ismail</h1>
+                    <p className="laptopL:text-base tablet:text-sm text-xs">My name is</p>
+                    <h1 className="laptopL:text-4xl tablet:text-3xl text-4xl  font-semibold">Maulana Hafidz Ismail</h1>
                     <div className="mt-3">
-                        <p>Roles:</p>
-                        <div className="flex flex-wrap gap-1 mt-1">
+                        <p className="laptopL:text-base tablet:text-sm text-xs">Roles:</p>
+                        <div className="flex flex-wrap gap-1 mt-1 laptopL:text-base tablet:text-sm text-[10px]">
                             <h2 className="text-black bg-white rounded-full w-fit px-2">
                                 Fullstack Web Developer
                             </h2>
@@ -32,20 +69,35 @@ export default function Dashboard() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col mt-15">
+                <div className="flex flex-col tablet:mt-[3.5vw] mt-[5dvh] laptopL:text-base tablet:text-sm text-xs">
                     <p>Hi!👋 Glad to know that you are interested in me. You can call me Hafidz. I&apos;m from Indonesia.</p>
                     <p className="mt-5">Feel free to look around my personal website to get to know me better. Who knows, maybe one day you&apos;ll need my help! This website will serve as a gallery of my works and skills, where I&apos;ll showcase everything I create.</p>
 
                     {/* List of Content */}
-                    <ul className="mt-15">
-                        <li className="hover:font-bold py-1 w-fit cursor-pointer">About</li>
-                        <li className="hover:font-bold py-1 w-fit cursor-pointer">Articles</li>
-                        <li className="hover:font-bold py-1 w-fit cursor-pointer">Badges & Certs</li>
-                        <li className="hover:font-bold py-1 w-fit cursor-pointer">Works</li>
+                    <ul className="tablet:mt-[3.5vw] mt-[5dvh]">
+                        <li className={`hover:font-bold py-1 w-fit cursor-pointer ${nav == 0 ? "font-bold" : " "} select-none`} onClick={() => { setNav(0); dispatch(updatePage(0)); pleaseScrollTo(document.getElementById("about"), 0) }}>About</li>
+                        <li className={`hover:font-bold py-1 w-fit cursor-pointer ${nav == 1 ? "font-bold" : " "} select-none`} onClick={() => { setNav(1); dispatch(updatePage(1)); pleaseScrollTo(document.getElementById("articles"), 0) }}>Articles</li>
+                        <li className={`hover:font-bold py-1 w-fit cursor-pointer ${nav == 2 ? "font-bold" : " "} select-none`} onClick={() => { setNav(2); dispatch(updatePage(2)); pleaseScrollTo(document.getElementById("badgesAndCerts"), 0) }}>Badges & Certs</li>
+                        <div className="flex w-fit">
+                            <li className={`hover:font-bold py-1 w-fit cursor-pointer ${nav == 3 ? "font-bold" : " "} select-none`} onClick={() => { setNav(3); dispatch(updatePage(3)); pleaseScrollTo(document.getElementById("works"), 0) }}>Works</li>
+                            <div className={`flex opacity-0 ${nav == 3 ? "opacity-40" : "pointer-events-none"} hover:opacity-100 transition-opacity duration-500 select-none`}>
+                                <p className="py-1 mx-4">—</p>
+                                <div className="flex">
+                                    <p className="py-1">As</p>
+                                    <select name="roles" className="rounded-md focus:outline-hidden w-auto cursor-pointer">
+                                        <option className="block px-4 py-2 text-sm text-gray-700">Graphic Designer</option>
+                                        <option className="block px-4 py-2 text-sm text-gray-700">Fullstack Web Dev</option>
+                                        <option className="block px-4 py-2 text-sm text-gray-700">3D Modeller</option>
+                                        <option className="block px-4 py-2 text-sm text-gray-700">AI Developer</option>
+                                        <option className="block px-4 py-2 text-sm text-gray-700">Digital Marketing S.</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                     </ul>
 
                     {/* Contact Person */}
-                    <p className="mt-20">If you have suggestion or anything else for me, you can contact me with these</p>
+                    <p className="tablet:mt-[4.2vw] mt-[5dvh]">If you have suggestion or anything else for me, you can contact me with these</p>
                     <div className="flex gap-3 w-fit mt-5">
                         <div className="flex items-center gap-1">
                             <svg
