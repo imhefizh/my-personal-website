@@ -38,7 +38,7 @@ export default function Dashboard() {
 
     return (
         <>
-            <div className="laptopL:px-20 px-10 tablet:h-screen h-dvh text-white laptopL:w-[40%] laptop:w-[40%] laptop:fixed flex flex-col items-center tablet:py-[20dvh] py-[20dvh] justify-between">
+            <div className="laptopL:px-20 px-10 tablet:h-screen h-dvh text-white laptopL:w-[40%] laptop:w-[40%] laptop:fixed flex flex-col items-center tablet:py-[17dvh] py-[13dvh] justify-between">
                 <div id="main-content" className="flex flex-col w-full">
                     <p className="laptopL:text-base tablet:text-sm text-xs">My name is</p>
                     <h1 className="laptopL:text-4xl tablet:text-3xl text-4xl  font-semibold">Maulana Hafidz Ismail</h1>
@@ -69,9 +69,9 @@ export default function Dashboard() {
                         </div>
                     </div>
                 </div>
-                {/* <div className="flex flex-col laptopL:text-base tablet:text-sm text-xs">
-                    <p className="mt-5">Feel free to look around 👀 my personal website to get to know me better. Who knows, maybe one day you&apos;ll need my help! This website will serve as a gallery of my works and skills, where I&apos;ll showcase everything I create.</p>
-                </div> */}
+                <div className="flex flex-col laptopL:text-base tablet:text-sm text-xs">
+                    <p className="mt-0">Feel free to look around 👀 my personal website to get to know me better. Who knows, maybe one day you&apos;ll need my help! This website will serve as a gallery of my works and skills, where I&apos;ll showcase everything I create.</p>
+                </div>
                 <div id="nav" className="flex w-full flex-col laptopL:text-base tablet:text-sm text-xs">
                     {/* List of Content */}
                     <ul className="">
