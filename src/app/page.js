@@ -9,7 +9,7 @@ import { useSelector } from "react-redux"
 
 export default function LandingPage() {
   return (
-    <main className="flex flex-col laptop:flex-row w-screen laptopL:px-50 laptop:px-30">
+    <main className="flex flex-col laptop:flex-row w-screen laptopL:px-50 laptop:px-30 tracking-wide leading-7">
       <Dashboard />
       <About />
       <Articles />
