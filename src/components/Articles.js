@@ -1,12 +1,14 @@
+import { useState } from "react"
 import { useSelector } from "react-redux"
 
 export default function Articles() {
     const page = useSelector(state => state.general.page)
+    const [collapse, setCollapse] = useState(0)
     return (
         <>
-            <div id="articles" className={`${page == 1 ? "flex" : "hidden"} min-h-dvh h-auto w-full laptopL:ml-[50.5%] laptop:ml-[48.5%] text-white flex-col items-center justify-center`}>
+            <div id="articles" className={`${page == 1 ? "flex" : "hidden"} tablet:pt-24 min-h-dvh h-auto min-w-[52%] text-white flex-col items-center`}>
                 <h2>Articles</h2>
-                <h3>Not posted anything yet</h3>
+                <div className="w-full h-32 bg-white"></div>
             </div>
         </>
     )

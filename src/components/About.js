@@ -14,10 +14,10 @@ export default function About() {
 
     return (
         <>
-            <div id="about" className={`${page == 0 ? "flex" : "hidden"} min-h-dvh h-auto tablet:justify-center w-full laptopL:ml-[50.5%] laptop:ml-[48.5%] text-white flex-col items-center pt-[6dvh] tablet:pt-[12dvh] px-10 tablet:px-0`}>
-                <h1 id="page-title" className="text-2xl font-bold tablet:font-medium">About Me</h1>
-                <div id="content" className="text-left laptopL:px-20 tablet:text-base text-xs mt-7 items-center flex flex-col">
-                    <p id="opening" className="text-justify">
+            <div id="about" className={`${page == 0 ? "flex" : "hidden"} tablet:pt-24 h-auto tablet:w-[52%] text-white flex-col items-center`}>
+                <h1 id="page-title" className="text-2xl font-bold tablet:font-medium w-full">About Me</h1>
+                <div id="content" className="text-left tablet:text-base text-xs mt-3 items-center flex flex-col">
+                    <p id="opening" className="leading-relaxed">
                         Everyone like to read less and get the point straightly. So I&apos;ll make this page with several questions that help you to know me. Here we go...
                     </p>
                     {/* Questions */}
@@ -88,7 +88,7 @@ export default function About() {
                         </li>
                     </ol>
                     {/* Experienced With */}
-                    <p id="mid" className="text-justify mt-5">
+                    <p id="mid" className="mt-5 leading-relaxed">
                         My mind always starts with &quot;How if..&quot; when facing a problem, and to get the answer I have to make my insights wider and gain more experiences. I know it is still a few, but here is what am I experienced with
                     </p>
                     <div id="logos" className={`gap-5 mt-7 grid w-auto ${screenH < 768 ? 'grid-cols-4' : 'grid-cols-5'}`}>
