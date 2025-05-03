@@ -13,9 +13,9 @@ export default function LandingPage() {
       <div className="flex flex-col tablet:flex-row px-7 tablet:px-0 w-screen max-w-screen-xl gap-10">
         <Dashboard />
         <About />
-        <Articles />
         <BadgesAndCerts />
         <Works />
+        <Articles />
       </div>
     </div>
   )

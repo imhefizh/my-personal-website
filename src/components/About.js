@@ -14,7 +14,7 @@ export default function About() {
 
     return (
         <>
-            <div id="about" className={`${page == 0 ? "flex" : "hidden"} tablet:pt-24 h-auto tablet:w-[52%] text-white flex-col items-center`}>
+            <div id="about" className={`${page == 0 ? "flex" : "tablet:hidden"} tablet:pt-24 h-auto tablet:w-[52%] text-white flex-col items-center`}>
                 <h1 id="page-title" className="text-2xl font-bold tablet:font-medium w-full">About Me</h1>
                 <div id="content" className="text-left tablet:text-base text-xs mt-3 items-center flex flex-col">
                     <p id="opening" className="leading-relaxed">
@@ -32,7 +32,7 @@ export default function About() {
                                     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                                 </svg>
                             </div>
-                            <p className={`${collapse == 1 ? "block" : "hidden"} my-4 text-justify tablet:text-base text-xs border-b border-white pb-3`}>I am Maulana Hafidz Ismail. Everyone knows me as Hafidz, 21 years old of life made me being a curious person.</p>
+                            <p className={`${collapse == 1 ? "block" : "hidden"} my-4 text-justify tablet:text-base text-xs border-b border-white pb-3 leading-relaxed`}>I am Maulana Hafidz Ismail. Everyone knows me as Hafidz, 21 years old of life made me being a curious person.</p>
                         </li>
 
                         <li id="point" className="mt-2 select-none" onClick={() => setCollapse(collapse != 2 ? 2 : 0)}>
@@ -45,7 +45,7 @@ export default function About() {
                                     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                                 </svg>
                             </div>
-                            <p className={`${collapse == 2 ? "block" : "hidden"} my-4 text-justify tablet:text-base text-xs border-b border-white pb-3`}>Digital world, computer, any technologies, are always look like an awesome magic for me. If our anchestor had magic spell and magic book to teleport, to cure people, and make everyone life easier, today we have advance technologies for doing those things! And much more efficient because everyone can use it easily.</p>
+                            <p className={`${collapse == 2 ? "block" : "hidden"} my-4 text-justify tablet:text-base text-xs border-b border-white pb-3 leading-relaxed`}>Digital world, computer, any technologies, are always look like an awesome magic for me. If our anchestor had magic spell and magic book to teleport, to cure people, and make everyone life easier, today we have advance technologies for doing those things! And much more efficient because everyone can use it easily.</p>
                         </li>
 
                         <li id="point" className="mt-2 select-none" onClick={() => setCollapse(collapse != 3 ? 3 : 0)}>
@@ -58,7 +58,7 @@ export default function About() {
                                     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                                 </svg>
                             </div>
-                            <p className={`${collapse == 3 ? "block" : "hidden"} my-4 text-justify tablet:text-base text-xs border-b border-white pb-3`}>I am dreaming about better life for everyone. I got news that some people using their capability to make other&apos;s life worse, even some people in goverment, I want fight them one day later, for now I just need to learn more and make some money to get into next step.</p>
+                            <p className={`${collapse == 3 ? "block" : "hidden"} my-4 text-justify tablet:text-base text-xs border-b border-white pb-3 leading-relaxed`}>I am dreaming about better life for everyone. I got news that some people using their capability to make other&apos;s life worse, even some people in goverment, I want fight them one day later, for now I just need to learn more and make some money to get into next step.</p>
                         </li>
 
                         <li id="point" className="mt-2 select-none" onClick={() => setCollapse(collapse != 4 ? 4 : 0)}>
@@ -71,7 +71,7 @@ export default function About() {
                                     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                                 </svg>
                             </div>
-                            <p className={`${collapse == 4 ? "block" : "hidden"} my-4 text-justify tablet:text-base text-xs border-b border-white pb-3`}>I want to be a great visionary person, just like every visionary people on earth that bring a solution for everyone problems.</p>
+                            <p className={`${collapse == 4 ? "block" : "hidden"} my-4 text-justify tablet:text-base text-xs border-b border-white pb-3 leading-relaxed`}>I want to be a great visionary person, just like every visionary people on earth that bring a solution for everyone problems.</p>
                         </li>
 
                         <li id="point" className="mt-2 select-none" onClick={() => setCollapse(collapse != 5 ? 5 : 0)}>
@@ -84,7 +84,7 @@ export default function About() {
                                     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                                 </svg>
                             </div>
-                            <p className={`${collapse == 5 ? "block" : "hidden"} my-4 text-justify tablet:text-base text-xs border-b border-white pb-3`}>For my career, I am inspired by Tony Stark, Linus Torvalds, and Steve Jobs. For being human, it is always Prophet Muhammad SAW.</p>
+                            <p className={`${collapse == 5 ? "block" : "hidden"} my-4 text-justify tablet:text-base text-xs border-b border-white pb-3 leading-relaxed`}>For my career, I am inspired by Tony Stark, Linus Torvalds, and Steve Jobs. For being human, it is always Prophet Muhammad SAW.</p>
                         </li>
                     </ol>
                     {/* Experienced With */}
@@ -374,7 +374,6 @@ export default function About() {
                             </a>
                         </div>
                     </div>
-                    <div className="w-full h-[200dvh]"></div>
                 </div>
             </div >
         </>
