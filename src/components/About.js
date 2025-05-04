@@ -5,6 +5,7 @@ import { useSelector } from "react-redux"
 export default function About() {
     const page = useSelector(state => state.general.page)
     const [collapse, setCollapse] = useState(0)
+    const [show, setShow] = useState(false)
     const [screenH, setScreenH] = useState(0)
 
     useEffect(() => {
@@ -93,7 +94,7 @@ export default function About() {
                     </p>
                     <div id="logos" className={`gap-5 mt-7 grid w-auto ${screenH < 768 ? 'grid-cols-4' : 'grid-cols-5'}`}>
                         <div id="javascript" className="relative h-fit">
-                            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
                                 <div className={`tablet:h-20 h-16 tablet:w-20 w-16 bg-black absolute inset-0 z-20 mix-blend-saturation opacity-0 laptop:opacity-100 transition-opacity ease-in-out duration-500 hover:opacity-0`}></div>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +110,7 @@ export default function About() {
                             </a>
                         </div>
                         <div id="react" className="relative h-fit">
-                            <a href="https://react.dev/">
+                            <a href="https://react.dev/" target="_blank">
                                 <div className={`tablet:h-20 h-16 tablet:w-20 w-16 bg-black absolute inset-0 z-20 mix-blend-saturation opacity-0 laptop:opacity-100 transition-opacity ease-in-out duration-500 hover:opacity-0`}></div>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -126,13 +127,13 @@ export default function About() {
                             </a>
                         </div>
                         <div id="nextjs" className="relative tablet:h-20 h-16 tablet:w-20 w-16 bg-white rounded-full overflow-clip flex items-center justify-center">
-                            <a href="https://nextjs.org/">
+                            <a href="https://nextjs.org/" target="_blank">
                                 <div className={`tablet:h-20 h-16 tablet:w-20 w-16 bg-gray-900 absolute inset-0 z-20 mix-blend-overlay opacity-0 laptop:opacity-100 transition-opacity ease-in-out duration-500 hover:opacity-0`}></div>
                                 <Image src='/nextjs2106.logowik.com.webp' alt="nextjs-logo" width={800} height={800} className="z-10" />
                             </a>
                         </div>
                         <div id="css" className="relative h-fit">
-                            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">
                                 <div className={`tablet:h-20 h-16 tablet:w-20 w-16 bg-black absolute inset-0 z-20 mix-blend-saturation opacity-0 laptop:opacity-100 transition-opacity ease-in-out duration-500 hover:opacity-0`}></div>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -183,8 +184,14 @@ export default function About() {
                                 </svg>
                             </a>
                         </div>
+                        <div id="nodejs" className="relative p-2 tablet:h-20 h-16 tablet:w-20 w-16 bg-white rounded-full overflow-clip flex items-center justify-center">
+                            <a href="https://nodejs.org/en" target="_blank">
+                                <div className={`tablet:h-20 h-16 tablet:w-20 w-16 bg-black absolute inset-0 z-20 mix-blend-saturation opacity-0 laptop:opacity-100 transition-opacity ease-in-out duration-500 hover:opacity-0`}></div>
+                                <Image src='/Node.js_logo.svg.png' alt="nextjs-logo" width={800} height={800} className="z-10" />
+                            </a>
+                        </div>
                         <div id="html" className="relative h-fit">
-                            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">
                                 <div className={`tablet:h-20 h-16 tablet:w-20 w-16 bg-black absolute inset-0 z-20 mix-blend-saturation opacity-0 laptop:opacity-100 transition-opacity ease-in-out duration-500 hover:opacity-0`}></div>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -210,7 +217,7 @@ export default function About() {
                             </a>
                         </div>
                         <div id="docker" className="relative h-fit pt-2">
-                            <a href="https://www.docker.com/">
+                            <a href="https://www.docker.com/" target="_blank">
                                 <div className={`tablet:h-20 h-16 tablet:w-20 w-16 bg-black absolute inset-0 z-20 mix-blend-saturation opacity-0 laptop:opacity-100 transition-opacity ease-in-out duration-500 hover:opacity-0`}></div>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -289,7 +296,7 @@ export default function About() {
                             </a>
                         </div>
                         <div id="kubernetes" className="relative h-fit">
-                            <a href="https://kubernetes.io/id/">
+                            <a href="https://kubernetes.io/id/" target="_blank">
                                 <div className={`tablet:h-20 h-16 tablet:w-20 w-16 bg-black absolute inset-0 z-20 mix-blend-saturation opacity-0 laptop:opacity-100 transition-opacity ease-in-out duration-500 hover:opacity-0`}></div>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -315,19 +322,13 @@ export default function About() {
                             </a>
                         </div>
                         <div id="ubuntu" className="relative h-fit">
-                            <a href="https://ubuntu.com/">
+                            <a href="https://ubuntu.com/" target="_blank">
                                 <div className={`tablet:h-20 h-16 tablet:w-20 w-16 bg-black absolute inset-0 z-20 mix-blend-saturation opacity-0 laptop:opacity-100 transition-opacity ease-in-out duration-500 hover:opacity-0`}></div>
                                 <svg width="2500" height="2500" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" className="h-auto tablet:w-20 w-16 z-10" preserveAspectRatio="xMidYMid"><path d="M255.637 127.683c0 70.514-57.165 127.68-127.683 127.68C57.434 255.363.27 198.197.27 127.683.27 57.165 57.436 0 127.954 0c70.519 0 127.683 57.165 127.683 127.683z" fill="#DD4814" /><path d="M41.133 110.633c-9.419 0-17.05 7.631-17.05 17.05 0 9.414 7.631 17.046 17.05 17.046 9.415 0 17.046-7.632 17.046-17.046 0-9.419-7.631-17.05-17.046-17.05zm121.715 77.478c-8.153 4.71-10.95 15.13-6.24 23.279 4.705 8.154 15.125 10.949 23.279 6.24 8.153-4.705 10.949-15.125 6.24-23.28-4.705-8.148-15.131-10.943-23.279-6.239zm-84.686-60.428c0-16.846 8.368-31.73 21.171-40.742L86.87 66.067c-14.914 9.97-26.012 25.204-30.624 43.047 5.382 4.39 8.826 11.075 8.826 18.568 0 7.489-3.444 14.174-8.826 18.565C60.852 164.094 71.95 179.33 86.87 189.3l12.463-20.88c-12.803-9.007-21.171-23.89-21.171-40.737zm49.792-49.797c26.013 0 47.355 19.944 49.595 45.38l24.29-.358c-1.194-18.778-9.398-35.636-22.002-48.032-6.482 2.449-13.97 2.074-20.44-1.656-6.483-3.741-10.548-10.052-11.659-16.902a74.26 74.26 0 0 0-19.785-2.69 73.787 73.787 0 0 0-32.819 7.663l11.845 21.227a49.596 49.596 0 0 1 20.975-4.632zm0 99.59a49.601 49.601 0 0 1-20.974-4.632l-11.845 21.225a73.712 73.712 0 0 0 32.82 7.671 74.04 74.04 0 0 0 19.784-2.697c1.111-6.85 5.177-13.155 11.658-16.902 6.476-3.737 13.959-4.105 20.44-1.656 12.605-12.396 20.808-29.254 22.004-48.032l-24.297-.358c-2.235 25.443-23.576 45.38-49.59 45.38zm34.888-110.231c8.154 4.708 18.575 1.92 23.279-6.234 4.71-8.154 1.92-18.575-6.234-23.285-8.154-4.704-18.574-1.91-23.285 6.244-4.703 8.15-1.908 18.57 6.24 23.275z" fill="#FFF" /></svg>
                             </a>
                         </div>
-                        <div id="nodejs" className="relative p-2 tablet:h-20 h-16 tablet:w-20 w-16 bg-white rounded-full overflow-clip flex items-center justify-center">
-                            <a href="https://nodejs.org/en">
-                                <div className={`tablet:h-20 h-16 tablet:w-20 w-16 bg-black absolute inset-0 z-20 mix-blend-saturation opacity-0 laptop:opacity-100 transition-opacity ease-in-out duration-500 hover:opacity-0`}></div>
-                                <Image src='/Node.js_logo.svg.png' alt="nextjs-logo" width={800} height={800} className="z-10" />
-                            </a>
-                        </div>
                         <div id="mongodb" className="relative h-fit bg-white rounded-full">
-                            <a href="https://www.mongodb.com/">
+                            <a href="https://www.mongodb.com/" target="_blank">
                                 <div className={`tablet:h-20 h-16 tablet:w-20 w-16 bg-black absolute inset-0 z-20 mix-blend-saturation opacity-0 laptop:opacity-100 transition-opacity ease-in-out duration-500 hover:opacity-0`}></div>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -373,8 +374,133 @@ export default function About() {
                                 </svg>
                             </a>
                         </div>
+                        <div id="openshift" className="relative h-fit">
+                            <a href="https://www.redhat.com/en/technologies/cloud-computing/openshift" target="_blank">
+                                <div className={`tablet:h-20 h-16 tablet:w-20 w-16 bg-black absolute inset-0 z-20 mix-blend-saturation opacity-0 laptop:opacity-100 transition-opacity ease-in-out duration-500 hover:opacity-0`}></div>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="800"
+                                    height="800"
+                                    preserveAspectRatio="xMidYMid"
+                                    viewBox="0 -9.5 256 256"
+                                    className="h-auto tablet:w-20 w-16 z-10"
+                                >
+                                    <path
+                                        fill="#DA2430"
+                                        d="m74.84 106.893-40.869 14.87c.525 6.552 1.652 13.024 3.24 19.366l38.818-14.137c-1.244-6.552-1.689-13.32-1.18-20.1M255.444 61.702c-2.85-5.879-6.147-11.561-9.966-16.916l-40.857 14.87c4.755 4.864 8.743 10.33 12.007 16.176L255.445 61.7z"
+                                    ></path>
+                                    <path
+                                        fill="#DA2430"
+                                        d="M182.95 61.461c-5.14-4.46-10.946-8.31-17.408-11.324h-.003C127.6 32.449 82.33 48.905 64.642 86.859a74 74 0 0 0-2.653 6.487c-2.208 6.423-3.498 12.99-3.991 19.546l-.144.054-.011.144-24.596 8.95-15.826 5.849-.007-.088-.434.158c-1.536-19.435 1.74-39.512 10.553-58.411a118 118 0 0 1 3.687-7.246c29.054-54.116 95.164-76.736 150.918-50.33a115.3 115.3 0 0 1 30.557 21.074 116.6 116.6 0 0 1 15.78 17.94L187.618 65.86a80 80 0 0 0-.635-.641l-.113.041a79 79 0 0 0-3.919-3.798"
+                                    ></path>
+                                    <path
+                                        fill="#E82429"
+                                        d="m19.261 193.896-.064.024A118.4 118.4 0 0 1 .939 154.347l38.825-14.14.002.003.024.125.252-.093.006.015c1.994 10.56 6.145 20.635 12.198 29.494a75 75 0 0 0 7.722 9.326l-.154.057.294.308-40.488 14.97q-.18-.256-.359-.516"
+                                    ></path>
+                                    <path
+                                        fill="#DA2430"
+                                        d="M173.465 183.447c-21.051 13.017-48.053 15.532-72.113 4.312a75.1 75.1 0 0 1-22.118-15.695l-40.772 14.844.313.437-.02.008c11.21 16.016 26.502 29.404 45.266 38.298 40.47 19.163 86.387 12.501 119.634-13.284 14.888-11.152 27.317-26.016 35.713-44.02 8.819-18.895 12.076-38.964 10.515-58.384l-1.136.414q-.022-.312-.047-.624l-40.49 14.957.002.004a76.5 76.5 0 0 1-6.806 26.46c-6.315 13.753-16.164 24.708-27.94 32.273"
+                                    ></path>
+                                    <path
+                                        fill="#E82429"
+                                        d="m218.552 75.13.607-.222v-.001a117.7 117.7 0 0 1 11.454 42.055l-40.773 14.834.022-.304-.77.285c1.11-15.088-2.275-30.093-9.435-43.123l38.548-14.25.002-.004q.174.364.345.73"
+                                    ></path>
+                                    <path
+                                        fill="#C22035"
+                                        d="M74.89 106.654 34.31 121.65c.52 6.61 1.64 13.136 3.219 19.532l38.546-14.258c-1.247-6.622-1.695-13.438-1.169-20.274M254.227 61.083c-2.83-5.929-6.106-11.658-9.898-17.059L203.76 59.02c4.72 4.906 8.68 10.418 11.92 16.315l38.542-14.256z"
+                                    ></path>
+                                    <path
+                                        fill="#AC223B"
+                                        d="m34.308 121.653 40.482-14.829-.165 8.133-39.056 14.749-1.266-8.063zM203.766 58.897l41.113-14.108 4.273 6.449-39.946 14.121-5.434-6.465z"
+                                    ></path>
+                                    <path
+                                        fill="#B92135"
+                                        d="m38.764 187.201 40.53-14.749 12.258 11.565-42.503 15.956-10.283-12.776zM249.38 109.862l-41.165 14.844-3.032 16.478 43.892-15.643.311-15.677z"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </div>
+                        <div id="tailwind" className="relative tablet:h-20 h-16 tablet:w-20 w-16 flex items-center bg-white rounded-full">
+                            <a href="https://tailwindcss.com/" target="_blank">
+                                <div className={`tablet:h-20 h-16 tablet:w-20 w-16 bg-black absolute inset-0 z-20 mix-blend-saturation opacity-0 laptop:opacity-100 transition-opacity ease-in-out duration-500 hover:opacity-0`}></div>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="2500"
+                                    height="1504"
+                                    preserveAspectRatio="xMidYMid"
+                                    viewBox="0 0 256 153.6"
+                                    className="h-auto tablet:w-20 p-2 w-16 z-10"
+                                >
+                                    <linearGradient id="a" x1="-2.778%" y1="32%" y2="67.556%">
+                                        <stop offset="0" stopColor="#2298bd"></stop>
+                                        <stop offset="1" stopColor="#0ed7b5"></stop>
+                                    </linearGradient>
+                                    <path
+                                        fill="url(#a)"
+                                        d="M128 0Q76.8 0 64 51.2 83.2 25.6 108.8 32c9.737 2.434 16.697 9.499 24.401 17.318C145.751 62.057 160.275 76.8 192 76.8q51.2 0 64-51.2-19.2 25.6-44.8 19.2c-9.737-2.434-16.697-9.499-24.401-17.318C174.249 14.743 159.725 0 128 0M64 76.8q-51.2 0-64 51.2 19.2-25.6 44.8-19.2c9.737 2.434 16.697 9.499 24.401 17.318C81.751 138.857 96.275 153.6 128 153.6q51.2 0 64-51.2-19.2 25.6-44.8 19.2c-9.737-2.434-16.697-9.499-24.401-17.318C110.249 91.543 95.725 76.8 64 76.8"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </div>
+                        <div id="ibmcloud" className="relative p-2 tablet:h-20 h-16 tablet:w-20 w-16 bg-white rounded-full overflow-clip items-center justify-center tablet:flex hidden ">
+                            <a href="https://www.ibm.com/cloud" target="_blank">
+                                <div className={`tablet:h-20 h-16 tablet:w-20 w-16 bg-black absolute inset-0 z-20 mix-blend-saturation opacity-0 laptop:opacity-100 transition-opacity ease-in-out duration-500 hover:opacity-0`}></div>
+                                <Image src='/IBM_Cloud_logo.png' alt="nextjs-logo" width={800} height={800} className="z-10 -mt-1" />
+                            </a>
+                        </div>
+                        <div id="github" className="relative tablet:h-20 h-16 tablet:w-20 w-16 rounded-full items-center justify-center tablet:flex hidden">
+                            <a href="https://github.com/" target="_blank">
+                                <div className={`tablet:h-20 h-16 tablet:w-20 w-16 bg-black absolute inset-0 z-20 mix-blend-saturation opacity-0 laptop:opacity-100 transition-opacity ease-in-out duration-500 hover:opacity-0`}></div>
+                                <svg xmlns="http://www.w3.org/2000/svg" id="github" viewBox="0 0 128 128" className="h-auto tablet:w-[85px] p-2 w-18 z-10">
+                                    <g fill="#fff">
+                                        <path
+                                            fillRule="evenodd"
+                                            d="M64 1.512c-23.493 0-42.545 19.047-42.545 42.545 0 18.797 12.19 34.745 29.095 40.37 2.126.394 2.907-.923 2.907-2.047 0-1.014-.04-4.366-.058-7.92-11.837 2.573-14.334-5.02-14.334-5.02-1.935-4.918-4.724-6.226-4.724-6.226-3.86-2.64.29-2.586.29-2.586 4.273.3 6.523 4.385 6.523 4.385 3.794 6.504 9.953 4.623 12.38 3.536.383-2.75 1.485-4.628 2.702-5.69-9.45-1.075-19.384-4.724-19.384-21.026 0-4.645 1.662-8.44 4.384-11.42-.442-1.072-1.898-5.4.412-11.26 0 0 3.572-1.142 11.7 4.363 3.395-.943 7.035-1.416 10.65-1.432 3.616.017 7.258.49 10.658 1.432 8.12-5.504 11.688-4.362 11.688-4.362 2.316 5.86.86 10.187.418 11.26 2.728 2.978 4.378 6.774 4.378 11.42 0 16.34-9.953 19.938-19.427 20.99 1.526 1.32 2.886 3.91 2.886 7.88 0 5.692-.048 10.273-.048 11.674 0 1.13.766 2.458 2.922 2.04 16.896-5.632 29.07-21.574 29.07-40.365C106.545 20.56 87.497 1.512 64 1.512"
+                                            clipRule="evenodd"
+                                        ></path>
+                                        <path d="M37.57 62.596c-.095.212-.428.275-.73.13-.31-.14-.482-.427-.382-.64.09-.216.424-.277.733-.132.31.14.486.43.38.642zm1.723 1.924c-.203.187-.6.1-.87-.198-.278-.297-.33-.694-.124-.884.208-.188.593-.1.87.197.28.3.335.693.123.884zm1.677 2.448c-.26.182-.687.012-.95-.367-.262-.377-.262-.83.005-1.013.264-.182.684-.018.95.357.262.385.262.84-.005 1.024zm2.298 2.368c-.233.257-.73.188-1.093-.163-.372-.343-.475-.83-.242-1.087.237-.257.736-.185 1.102.163.37.342.482.83.233 1.086zm3.172 1.374c-.104.334-.582.485-1.064.344-.482-.146-.796-.536-.7-.872.1-.336.582-.493 1.067-.342.48.144.795.53.696.87zm3.48.255c.013.35-.396.642-.902.648-.508.012-.92-.272-.926-.618 0-.354.4-.642.908-.65.506-.01.92.272.92.62m3.24-.551c.06.342-.29.694-.793.787-.494.092-.95-.12-1.014-.46-.06-.35.297-.7.79-.792.503-.088.953.118 1.017.466zm0 0"></path>
+                                    </g>
+                                    <path
+                                        fill="#fff"
+                                        d="M24.855 108.302h-10.7a.5.5 0 0 0-.5.5v5.232a.5.5 0 0 0 .5.5h4.173v6.5s-.937.32-3.53.32c-3.056 0-7.327-1.116-7.327-10.508 0-9.393 4.448-10.63 8.624-10.63 3.614 0 5.17.636 6.162.943.31.094.6-.216.6-.492l1.193-5.055a.47.47 0 0 0-.192-.39c-.403-.288-2.857-1.66-9.058-1.66-7.144 0-14.472 3.038-14.472 17.65 0 14.61 8.39 16.787 15.46 16.787 5.854 0 9.405-2.502 9.405-2.502.146-.08.162-.285.162-.38v-16.316a.5.5 0 0 0-.5-.5zM79.506 94.81H73.48a.5.5 0 0 0-.498.503l.002 11.644h-9.392V95.313a.5.5 0 0 0-.497-.503H57.07a.5.5 0 0 0-.498.503v31.53c0 .277.224.503.498.503h6.025a.5.5 0 0 0 .497-.504v-13.486h9.392l-.016 13.486c0 .278.224.504.5.504h6.038a.5.5 0 0 0 .497-.504v-31.53a.497.497 0 0 0-.497-.502m-47.166.717c-2.144 0-3.884 1.753-3.884 3.923 0 2.167 1.74 3.925 3.884 3.925 2.146 0 3.885-1.758 3.885-3.925 0-2.17-1.74-3.923-3.885-3.923m2.956 9.608H29.29c-.276 0-.522.284-.522.56v20.852c0 .613.382.795.876.795h5.41c.595 0 .74-.292.74-.805v-20.899a.5.5 0 0 0-.498-.502zm67.606.047h-5.98a.5.5 0 0 0-.496.504v15.46s-1.52 1.11-3.675 1.11-2.727-.977-2.727-3.088v-13.482a.5.5 0 0 0-.497-.504h-6.068a.5.5 0 0 0-.498.504v14.502c0 6.27 3.495 7.804 8.302 7.804 3.944 0 7.124-2.18 7.124-2.18s.15 1.15.22 1.285c.07.136.247.273.44.273l3.86-.017a.5.5 0 0 0 .5-.504l-.003-21.166a.504.504 0 0 0-.5-.502zm16.342-.708c-3.396 0-5.706 1.515-5.706 1.515V95.312a.5.5 0 0 0-.497-.503H107a.5.5 0 0 0-.5.503v31.53a.5.5 0 0 0 .5.503h4.192c.19 0 .332-.097.437-.268.103-.17.254-1.454.254-1.454s2.47 2.34 7.148 2.34c5.49 0 8.64-2.784 8.64-12.502s-5.03-10.988-8.428-10.988zm-2.36 17.764c-2.073-.063-3.48-1.004-3.48-1.004v-9.985s1.388-.85 3.09-1.004c2.153-.193 4.228.458 4.228 5.594 0 5.417-.935 6.486-3.837 6.398zm-63.689-.118c-.263 0-.937.107-1.63.107-2.22 0-2.973-1.032-2.973-2.368v-8.866h4.52a.5.5 0 0 0 .5-.504v-4.856a.5.5 0 0 0-.5-.502h-4.52l-.007-5.97c0-.227-.116-.34-.378-.34h-6.16c-.238 0-.367.106-.367.335v6.17s-3.087.745-3.295.805a.5.5 0 0 0-.36.48v3.877a.5.5 0 0 0 .497.503h3.158v9.328c0 6.93 4.86 7.61 8.14 7.61 1.497 0 3.29-.48 3.586-.59.18-.067.283-.252.283-.453l.004-4.265a.51.51 0 0 0-.5-.502z"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                </div>
+                    <div id="logos" className={`gap-5 mt-5 grid w-auto ${screenH < 768 ? 'grid-cols-4' : 'grid-cols-5'} tablet:hidden block ${show == true ? "" : "hidden"}`}>
+                        <div id="ibmcloud" className="relative p-2 tablet:h-20 h-16 tablet:w-20 w-16 bg-white rounded-full overflow-clip flex items-center justify-center">
+                            <a href="https://www.ibm.com/cloud" target="_blank">
+                                <div className={`tablet:h-20 h-16 tablet:w-20 w-16 bg-black absolute inset-0 z-20 mix-blend-saturation opacity-0 laptop:opacity-100 transition-opacity ease-in-out duration-500 hover:opacity-0`}></div>
+                                <Image src='/IBM_Cloud_logo.png' alt="nextjs-logo" width={800} height={800} className="z-10 -mt-1" />
+                            </a>
+                        </div>
+                        <div id="github" className="relative tablet:h-20 h-16 tablet:w-20 w-16 rounded-full flex items-center justify-center">
+                            <a href="https://github.com/" target="_blank">
+                                <div className={`tablet:h-20 h-16 tablet:w-20 w-16 bg-black absolute inset-0 z-20 mix-blend-saturation opacity-0 laptop:opacity-100 transition-opacity ease-in-out duration-500 hover:opacity-0`}></div>
+                                <svg xmlns="http://www.w3.org/2000/svg" id="github" viewBox="0 0 128 128" className="h-auto tablet:w-[85px] p-2 w-18 z-10">
+                                    <g fill="#fff">
+                                        <path
+                                            fillRule="evenodd"
+                                            d="M64 1.512c-23.493 0-42.545 19.047-42.545 42.545 0 18.797 12.19 34.745 29.095 40.37 2.126.394 2.907-.923 2.907-2.047 0-1.014-.04-4.366-.058-7.92-11.837 2.573-14.334-5.02-14.334-5.02-1.935-4.918-4.724-6.226-4.724-6.226-3.86-2.64.29-2.586.29-2.586 4.273.3 6.523 4.385 6.523 4.385 3.794 6.504 9.953 4.623 12.38 3.536.383-2.75 1.485-4.628 2.702-5.69-9.45-1.075-19.384-4.724-19.384-21.026 0-4.645 1.662-8.44 4.384-11.42-.442-1.072-1.898-5.4.412-11.26 0 0 3.572-1.142 11.7 4.363 3.395-.943 7.035-1.416 10.65-1.432 3.616.017 7.258.49 10.658 1.432 8.12-5.504 11.688-4.362 11.688-4.362 2.316 5.86.86 10.187.418 11.26 2.728 2.978 4.378 6.774 4.378 11.42 0 16.34-9.953 19.938-19.427 20.99 1.526 1.32 2.886 3.91 2.886 7.88 0 5.692-.048 10.273-.048 11.674 0 1.13.766 2.458 2.922 2.04 16.896-5.632 29.07-21.574 29.07-40.365C106.545 20.56 87.497 1.512 64 1.512"
+                                            clipRule="evenodd"
+                                        ></path>
+                                        <path d="M37.57 62.596c-.095.212-.428.275-.73.13-.31-.14-.482-.427-.382-.64.09-.216.424-.277.733-.132.31.14.486.43.38.642zm1.723 1.924c-.203.187-.6.1-.87-.198-.278-.297-.33-.694-.124-.884.208-.188.593-.1.87.197.28.3.335.693.123.884zm1.677 2.448c-.26.182-.687.012-.95-.367-.262-.377-.262-.83.005-1.013.264-.182.684-.018.95.357.262.385.262.84-.005 1.024zm2.298 2.368c-.233.257-.73.188-1.093-.163-.372-.343-.475-.83-.242-1.087.237-.257.736-.185 1.102.163.37.342.482.83.233 1.086zm3.172 1.374c-.104.334-.582.485-1.064.344-.482-.146-.796-.536-.7-.872.1-.336.582-.493 1.067-.342.48.144.795.53.696.87zm3.48.255c.013.35-.396.642-.902.648-.508.012-.92-.272-.926-.618 0-.354.4-.642.908-.65.506-.01.92.272.92.62m3.24-.551c.06.342-.29.694-.793.787-.494.092-.95-.12-1.014-.46-.06-.35.297-.7.79-.792.503-.088.953.118 1.017.466zm0 0"></path>
+                                    </g>
+                                    <path
+                                        fill="#fff"
+                                        d="M24.855 108.302h-10.7a.5.5 0 0 0-.5.5v5.232a.5.5 0 0 0 .5.5h4.173v6.5s-.937.32-3.53.32c-3.056 0-7.327-1.116-7.327-10.508 0-9.393 4.448-10.63 8.624-10.63 3.614 0 5.17.636 6.162.943.31.094.6-.216.6-.492l1.193-5.055a.47.47 0 0 0-.192-.39c-.403-.288-2.857-1.66-9.058-1.66-7.144 0-14.472 3.038-14.472 17.65 0 14.61 8.39 16.787 15.46 16.787 5.854 0 9.405-2.502 9.405-2.502.146-.08.162-.285.162-.38v-16.316a.5.5 0 0 0-.5-.5zM79.506 94.81H73.48a.5.5 0 0 0-.498.503l.002 11.644h-9.392V95.313a.5.5 0 0 0-.497-.503H57.07a.5.5 0 0 0-.498.503v31.53c0 .277.224.503.498.503h6.025a.5.5 0 0 0 .497-.504v-13.486h9.392l-.016 13.486c0 .278.224.504.5.504h6.038a.5.5 0 0 0 .497-.504v-31.53a.497.497 0 0 0-.497-.502m-47.166.717c-2.144 0-3.884 1.753-3.884 3.923 0 2.167 1.74 3.925 3.884 3.925 2.146 0 3.885-1.758 3.885-3.925 0-2.17-1.74-3.923-3.885-3.923m2.956 9.608H29.29c-.276 0-.522.284-.522.56v20.852c0 .613.382.795.876.795h5.41c.595 0 .74-.292.74-.805v-20.899a.5.5 0 0 0-.498-.502zm67.606.047h-5.98a.5.5 0 0 0-.496.504v15.46s-1.52 1.11-3.675 1.11-2.727-.977-2.727-3.088v-13.482a.5.5 0 0 0-.497-.504h-6.068a.5.5 0 0 0-.498.504v14.502c0 6.27 3.495 7.804 8.302 7.804 3.944 0 7.124-2.18 7.124-2.18s.15 1.15.22 1.285c.07.136.247.273.44.273l3.86-.017a.5.5 0 0 0 .5-.504l-.003-21.166a.504.504 0 0 0-.5-.502zm16.342-.708c-3.396 0-5.706 1.515-5.706 1.515V95.312a.5.5 0 0 0-.497-.503H107a.5.5 0 0 0-.5.503v31.53a.5.5 0 0 0 .5.503h4.192c.19 0 .332-.097.437-.268.103-.17.254-1.454.254-1.454s2.47 2.34 7.148 2.34c5.49 0 8.64-2.784 8.64-12.502s-5.03-10.988-8.428-10.988zm-2.36 17.764c-2.073-.063-3.48-1.004-3.48-1.004v-9.985s1.388-.85 3.09-1.004c2.153-.193 4.228.458 4.228 5.594 0 5.417-.935 6.486-3.837 6.398zm-63.689-.118c-.263 0-.937.107-1.63.107-2.22 0-2.973-1.032-2.973-2.368v-8.866h4.52a.5.5 0 0 0 .5-.504v-4.856a.5.5 0 0 0-.5-.502h-4.52l-.007-5.97c0-.227-.116-.34-.378-.34h-6.16c-.238 0-.367.106-.367.335v6.17s-3.087.745-3.295.805a.5.5 0 0 0-.36.48v3.877a.5.5 0 0 0 .497.503h3.158v9.328c0 6.93 4.86 7.61 8.14 7.61 1.497 0 3.29-.48 3.586-.59.18-.067.283-.252.283-.453l.004-4.265a.51.51 0 0 0-.5-.502z"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div className="pt-5 tablet:hidden flex items-center gap-1" onClick={() => setShow((prev) => !prev)}>
+                        <div className="bg-white w-5 h-[2px]"></div>
+                        <p className="text-xs">{show == false ? "Show more" : "Show less"}</p>
+                        <div className="bg-white w-5 h-[2px]"></div>
+                    </div>
+                </div >
             </div >
         </>
     )
