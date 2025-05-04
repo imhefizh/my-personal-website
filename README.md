@@ -5,4 +5,5 @@
 It is my personal website for me sharing about myself, articles, achievement, and works.
 I'm using Next.js Framework with Javascript, Tailwind CSS for styling, and MongoDB Atlas for the database
 
-## It was built with Next.js and deployed with Vercel, but I'll leave them rn
+## Update:
+I'll leave Next.js and Vercel rn
