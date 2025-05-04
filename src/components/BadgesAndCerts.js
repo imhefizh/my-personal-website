@@ -32,7 +32,7 @@ export default function BadgesAndCerts() {
                 </ul>
                 <div className={`gap-4 mt-4 grid w-auto ${screenH < 768 ? 'grid-cols-3' : 'grid-cols-5'} overflow-clip`}>
                     {data[0].map((data, index) => (
-                        <a key={index} id="badge-card" href={data.url} target="_blank" className={`${index <= 5 || show == true ? "" : "hidden"} hover:-translate-y-1 hover:drop-shadow-[0px_7px_10px_rgba(255,255,255,0.2)] bg-black transition-all ease-out duration-200 delay-[150] w-fit flex flex-col items-center cursor-pointer ${whichOne == 0 ? "" : "hidden"} `}>
+                        <a key={index} id="badge-card" href={data.url} target="_blank" className={`${index <= 5 || show == true || screenH > 768 ? "" : "hidden"} hover:-translate-y-1 hover:drop-shadow-[0px_7px_10px_rgba(255,255,255,0.2)] bg-black transition-all ease-out duration-200 delay-[150] w-fit flex flex-col items-center cursor-pointer ${whichOne == 0 ? "" : "hidden"} `}>
                             <div className="border border-white rounded-t-md w-fit flex flex-col items-center p-2">
                                 <Image className={`${data.shape == "Circle" ? "rounded-full" : ""}`} src={data.img} height={100} width={100} alt={data.name} />
                                 <p className="truncate w-20 pt-2 text-xs tablet:text-base">{data.name}</p>
@@ -42,7 +42,7 @@ export default function BadgesAndCerts() {
                         </a>
                     ))}
                     {data[1].map((data, index) => (
-                        <a key={index} id="badge-card" href={data.url} target="_blank" className={`${index <= 5 || show == true ? "" : "hidden"} hover:-translate-y-1 hover:drop-shadow-[0px_7px_10px_rgba(255,255,255,0.2)] bg-black transition-all ease-out duration-200 delay-[150] w-fit flex flex-col items-center cursor-pointer ${whichOne == 1 ? "" : "hidden"} `}>
+                        <a key={index} id="badge-card" href={data.url} target="_blank" className={`${index <= 5 || show == true || screenH > 768 ? "" : "hidden"} hover:-translate-y-1 hover:drop-shadow-[0px_7px_10px_rgba(255,255,255,0.2)] bg-black transition-all ease-out duration-200 delay-[150] w-fit flex flex-col items-center cursor-pointer ${whichOne == 1 ? "" : "hidden"} `}>
                             <div className="border border-white rounded-t-md w-fit flex flex-col items-center p-2">
                                 <Image className={`${data.shape == "Circle" ? "rounded-full" : ""}`} src={data.img} height={100} width={100} alt={data.name} />
                                 <p className="truncate w-20 pt-2 text-xs tablet:text-base">{data.name}</p>
